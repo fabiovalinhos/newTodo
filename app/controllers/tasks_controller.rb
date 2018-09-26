@@ -2,7 +2,8 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:edit, :update, :destroy]
 
   def index
-    @tasks = Task.order(due_date: :desc)
+    # @tasks = Task.order(due_date: :desc)
+    @tasks = Task.only_parent.order(due_date: :desc)
   end
 
   def new
@@ -51,6 +52,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:description, :due_date, :done)
+    params.require(:task).permit(:description, :due_date, :done, :parent_id)
   end
 end

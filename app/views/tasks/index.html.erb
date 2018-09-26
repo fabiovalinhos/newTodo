@@ -20,10 +20,16 @@
     <tbody>
       <% @tasks.each do |task| %>
         <%= render 'table_row', task: task %>
+
+        <!-- Subtarefas -->
+        <% task.sub_tasks.order(:due_date).each do |sub_task| %>
+          <%= render 'table_row', task: sub_task %>
+        <% end %>
       <% end %>
 
     </tbody>
   </table>
+  
 <% else %>
   <p>Nenhuma tarefa foi cadastrada ainda.</p>
 <% end %>
