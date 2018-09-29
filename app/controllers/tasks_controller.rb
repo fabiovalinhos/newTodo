@@ -1,9 +1,11 @@
 class TasksController < ApplicationController
+  include Exportable
+
   before_action :set_task, only: [:edit, :update, :destroy]
 
   def index
     # @tasks = Task.order(due_date: :desc)
-    @tasks = Task.only_parent.order(due_date: :desc)
+    @tasks = Task.only_parents.order(due_date: :desc)
   end
 
   def new
