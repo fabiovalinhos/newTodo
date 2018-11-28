@@ -1,4 +1,12 @@
-New todo list using new features, like tasks with subtasks and new Bootstrap version.  
+New todo list using new features, like tasks with subtasks and new Bootstrap version
+
+Hosted in Heroku
+
+Demo site click [here](https://testetodolist.herokuapp.com)
+
+Password: fabiovalinhos
+
+Password: shampoobamboo
 
 Instructor: Lucas Caton  
 
